@@ -37,12 +37,17 @@
         <div class="fas fa-search" id="search-btn"></div>
         <div class="fas fa-shopping-cart" id="cart-btn"></div>
         <div class="fas fa-user" id="login-btn"></div>
+        
+    <div id="mode-btn" class="mode-btn"><i class="fa fa-moon"></i></div>
+</div>
+
     </div>
 
     <form action="" class="search-form">
         <input type="search" id="search-box" placeholder="search here...">
         <label for="search-box" class="fas fa-search"></label>
     </form>
+
 
     <div class="shopping-cart">
         <div class="box">
@@ -553,6 +558,18 @@
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
+});
+document.getElementById('mode-btn').addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    // Change icon based on the mode
+    const modeIcon = document.getElementById('mode-btn').querySelector('i');
+    if (document.body.classList.contains('dark-mode')) {
+        modeIcon.classList.remove('fa-moon');
+        modeIcon.classList.add('fa-sun');
+    } else {
+        modeIcon.classList.remove('fa-sun');
+        modeIcon.classList.add('fa-moon');
+    }
 });
 </script>
 <script src="js/script.js"></script>
